@@ -21,7 +21,7 @@ app.use(cors());
 app.use("/tasks", tasksRouter);
 
 
- mongoose.connect(mongoDB, { useNewUrlParser: true });
+mongoose.connect(mongoDB, { useNewUrlParser: true });
 mongoose.Promise = global.Promise;
 var db = mongoose.connection;
 db.on("connected", () => console.log(`Mongoose connection open to ${mongoDB}`));
