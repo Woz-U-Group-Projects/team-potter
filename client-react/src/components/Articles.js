@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
-import '../task.min.css';
-import { Link } from 'react-router-dom';
+import "../task.min.css";
+import { Link } from "react-router-dom";
 import Header from "./layouts/Header";
 
 class Articles extends React.Component {
@@ -24,7 +24,9 @@ class Articles extends React.Component {
 
     // Express uses port 3001 (react uses 3000)
     let url = "http://localhost:3001/articles";
-    axios.get(url).then(response => this.setState({ articles: response.data }));
+    axios
+      .get(url)
+      .then((response) => this.setState({ articles: response.data }));
   };
 
   render() {
@@ -34,17 +36,19 @@ class Articles extends React.Component {
         <div className="jumbotron">
           <h1 className="display-3">LifeStyle Blog</h1>
         </div>
-        
+
         <div className="container-fluid">
-          {this.state.articles.map(p => (
+          {this.state.articles.map((p) => (
             <div key={p._id}>
               <h2 className="display-5 text-center">{p.title}</h2>
               <p>{p.article}</p>
               <span>{p.authorname}</span> <br />
-              <Link className="btn btn-success" to="/article">Read more</Link>
+              <Link className="btn btn-success" to={`article/${p._id}`}>
+                Read more
+              </Link>
             </div>
           ))}
-        </div>        
+        </div>
       </div>
     );
   }

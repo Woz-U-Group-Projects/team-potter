@@ -6,7 +6,8 @@ class Article extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      article: [] };
+      article: [],
+    };
     this.articleTitle = React.createRef();
   }
 
@@ -22,31 +23,25 @@ class Article extends React.Component {
     //let url = "http://localhost:5000/projects";
 
     // Express uses port 3001 (react uses 3000)
-    let url = "http://localhost:3001/articles";
+    // let url = "http://localhost:3001/articles";
     axios
-      .get(url)
+      .get("http://localhost:3001/articles/" + this.props.match.params.id)
       .then((response) => this.setState({ article: response.data }));
   };
 
   render() {
+    const article = this.state.article;
     return (
       <div>
-        <div>
-        <h2>{this.title}</h2>
-          {this.state.article.map((p) => (
-            <div key={p._id}>
-              <h2>{p.title}</h2>
-              <p>{p.article}</p>
-              <span>{p.authorname}</span> <br />
-              <button type="button" className="btn btn-primary">
-                Edit
-              </button>
-              <button type="button" className="btn btn-danger">
-                Delete
-              </button>
-            </div>
-          ))}
-        </div>
+        <h1>{article.title}</h1>
+        <p>{article.article}</p>
+        <span>{article.authorname}</span>
+        <button type="button" className="btn btn-primary">
+          Edit
+        </button>
+        <button type="button" className="btn btn-danger">
+          Delete
+        </button>
       </div>
     );
   }
