@@ -1,12 +1,22 @@
 import React from "react";
-import  Articles from "./components/Articles";
+import { Route } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import AddArticle from "./components/AddArticle";
+import Articles from "./components/Articles";
+
+
 import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <Articles />
-    </div>
+    
+      <div className="App">     
+      
+        <Route exact path="/" component={Articles} />
+        <Route path="/AddArticle" component={AddArticle} />
+      </div>
+    
   );
 }
 
