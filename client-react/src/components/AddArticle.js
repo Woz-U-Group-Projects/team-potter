@@ -50,8 +50,8 @@ class Articles extends React.Component {
       <div>
          <Header />
         <h3>Add New Article</h3>
-        Tittle:<input ref={this.articleTitle} /> <br />
-        Article:<input ref={this.articleArticle} /> <br />
+        Title:<input ref={this.articleTitle} /> <br />
+        Article:<textarea ref={this.articleArticle} /> <br />
         Author name:<input ref={this.articleAuthorName} /> <br />
         <button type="button" className="btn btn-primary" onClick={this.addArticle}>add</button>
       </div>
