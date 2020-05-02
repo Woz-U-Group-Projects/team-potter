@@ -1,18 +1,19 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Header = ({ title }) => (
-    <div>
-       <ul>
-          <li>
-            <NavLink to="/">Home</NavLink>
+    <nav id="mainNavbar" className="navbar bg-dark navbar-dark navbar-expand fixed-top">
+      <div className="container">
+        <ul className="navbar-nav">
+          <li className="nav-item">
+            <Link to="/" className="nav-link">Home</Link>
           </li>
-          <li>
-            <NavLink to="/AddArticle">Add Article</NavLink>
+          <li className="nav-item">
+            <Link to="/AddArticle" className="nav-link">Add Article</Link>
           </li>
         </ul>
-        
-    </div>
+      </div>
+    </nav>
 );
 
 export default Header;

@@ -33,15 +33,15 @@ class Articles extends React.Component {
     return (
       <div>
         <Header />
-        <div className="jumbotron">
-          <h1 className="display-3">LifeStyle Blog</h1>
+        <div className="jumbotron jumbotron-cover-image" id="header">
+          <h1 className="display-3">Lifestyle Blog</h1>
         </div>
 
-        <div className="container-fluid">
+        <div className="container">
           {this.state.articles.map((p) => (
             <div key={p._id}>
-              <h2 className="display-5 text-center">{p.title}</h2>
-              <p>{p.article}</p>
+              <h2 className="display-5">{p.title}</h2>
+              <p className="lead">{p.article}</p>
               <span>{p.authorname}</span> <br />
               <Link className="btn btn-success" to={`article/${p._id}`}>
                 Read more

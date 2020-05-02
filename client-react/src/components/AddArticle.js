@@ -44,17 +44,27 @@ class Articles extends React.Component {
     });
   };
 
-
   render() {
     return (
-      <div>
+      <div className="container addArticle">
          <Header />
-        <h3>Add New Article</h3>
-        Title:<input ref={this.articleTitle} /> <br />
-        Article:<textarea ref={this.articleArticle} /> <br />
-        Author name:<input ref={this.articleAuthorName} /> <br />
-        <button type="button" className="btn btn-primary" onClick={this.addArticle}>add</button>
-      </div>
+         <h1>Add New Article</h1>
+        <form>
+          <div className="form-group">
+            <label for="title">Title: </label>
+            <input type="text" className="form-control" id="title" aria-describedby="titleField" placeholder="Enter the title of your article here" ref={this.articleTitle}/>
+          </div>
+          <div className="form-group">
+            <label for="article">Article: </label>
+            <textarea type="text" className="form-control" id="article" placeholder="Enter your article content here" rows="30" ref={this.articleArticle}/>
+          </div>
+          <div className="form-group">
+            <label for="author">Author name:</label>
+            <input type="text" className="form-control" id="author" placeholder="Enter your name here" ref={this.articleAuthorName}/>
+          </div>
+          <button type="submit" className="btn btn-primary" onClick={this.addArticle}>Submit</button>
+          </form>
+        </div>
     );
   }
 }

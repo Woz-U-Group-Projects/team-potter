@@ -1,5 +1,7 @@
 import React from "react";
 import axios from "axios";
+import{ Link } from "react-router-dom";
+import { Button } from "react-bootstrap";
 import "../task.min.css";
 
 class Article extends React.Component {
@@ -15,6 +17,11 @@ class Article extends React.Component {
     this.getData();
   }
 
+  // componentDidMount() {
+  //   this.deleteData();
+  // }
+
+
   getData = () => {
     // Java Spring Boot uses port 8080
     //let url = "http://localhost:8080/tasks";
@@ -29,6 +36,14 @@ class Article extends React.Component {
       .then((response) => this.setState({ article: response.data }));
   };
 
+  deleteData = () => {
+    let url = "http://localhost:3001/articles";
+    axios
+      .delete(`${url}/` + this.props.match.params.id)
+      .then((response) => this.setState({ article: response.data}));
+  }
+   
+
   render() {
     const article = this.state.article;
     return (
@@ -39,9 +54,9 @@ class Article extends React.Component {
         <button type="button" className="btn btn-primary">
           Edit
         </button>
-        <button type="button" className="btn btn-danger">
+        <Button onClick={this.deleteData}type="button" className="btn btn-danger" href='/'>
           Delete
-        </button>
+        </Button>
       </div>
     );
   }
