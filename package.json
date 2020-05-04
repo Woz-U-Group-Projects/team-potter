@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Woz-U-Group-Projects/team-potter/issues"
   },
-  "homepage": "https://github.com/Woz-U-Group-Projects/team-potter#readme"
+  "homepage": "https://github.com/Woz-U-Group-Projects/team-potter#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }

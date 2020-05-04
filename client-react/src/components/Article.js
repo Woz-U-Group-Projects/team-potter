@@ -34,6 +34,7 @@ class Article extends React.Component {
     // Express uses port 3001 (react uses 3000)
     let url = "http://localhost:3001/articles";
     axios
+
       .get(`${url}/` + this.props.match.params.id)
       .then((response) => this.setState({ article: response.data }));
   };
