@@ -5,11 +5,11 @@ var logger = require("morgan");
 var cors = require("cors");
 var mongoose = require("mongoose");
 
-var tasksRouter = require("./routes/tasks");
+var articlesRouter = require("./routes/articles");
 
 var app = express();
 
-var mongoDB = require("./private/mongo");
+var mongoDB = require("./private/mongo"); 
 
 app.use(logger("dev"));
 app.use(express.json());
@@ -18,7 +18,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(cors());
 
-app.use("/tasks", tasksRouter);
+app.use("/articles", articlesRouter);
+
 
 mongoose.connect(mongoDB, { useNewUrlParser: true });
 mongoose.Promise = global.Promise;

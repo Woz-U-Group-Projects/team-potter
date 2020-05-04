@@ -1,0 +1,40 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+#mainNavbar {
+  font-size: 1.5em;
+  font-weight: 400
+}
+
+.bg-dark {
+  background: #FF5E33 !important;
+}
+
+.jumbotron {
+  background: url(./Images/austin-schmid-jumping-lady.jpg) center center / cover no-repeat;
+  padding: 5em inherit;
+  color: #FFF;
+  padding-top: 20%;
+  padding-bottom: 20%;
+}
+
+.jumbotron h1 {
+  font-weight: 500;
+}
+
+.btn-success {
+  background: #FF5E33;
+}
+
+.btn-success:hover {
+  background: #333;
+}
+
+.addArticle {
+  padding-top: 10%;
+}
