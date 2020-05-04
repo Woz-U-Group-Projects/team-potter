@@ -3,6 +3,7 @@ import axios from "axios";
 import "../task.min.css";
 import { Link } from "react-router-dom";
 import Header from "./layouts/Header";
+import Footer from "./layouts/Footer";
 
 class Articles extends React.Component {
   constructor(props) {
@@ -32,23 +33,24 @@ class Articles extends React.Component {
   render() {
     return (
       <div>
-        <Header />
-        <div className="jumbotron jumbotron-cover-image" id="header">
-          <h1 className="display-3">Lifestyle Blog</h1>
-        </div>
+        <Header />     
 
         <div className="container">
           {this.state.articles.map((p) => (
             <div key={p._id}>
-              <h2 className="display-5">{p.title}</h2>
+              <Link to={`article/${p._id}`}>
+                <h2 className="display-5">{p.title}</h2>
+              </Link>
               <p className="lead">{p.article}</p>
-              <span>{p.authorname}</span> <br />
+              {/* innclude date created <span className="badge badge-secondary p-2">{p.createdAt.toLocaleDateString()}</span>*/} 
+              <span className="badge badge-secondary p-2">{p.authorname}</span> <br />
               <Link className="btn btn-success" to={`article/${p._id}`}>
                 Read more
               </Link>
             </div>
           ))}
         </div>
+        <Footer />
       </div>
     );
   }

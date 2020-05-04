@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Header = ({ title }) => (
+  <>
     <nav id="mainNavbar" className="navbar bg-dark navbar-dark navbar-expand fixed-top">
       <div className="container">
         <ul className="navbar-nav">
@@ -14,6 +15,10 @@ const Header = ({ title }) => (
         </ul>
       </div>
     </nav>
+    <div className="jumbotron jumbotron-cover-image" id="header">
+        <h1 className="display-3">Lifestyle Blog</h1>
+    </div>
+    </>
 );
 
 export default Header;

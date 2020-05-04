@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import '../task.min.css';
 import Header from "./layouts/Header";
+import Footer from "./layouts/Footer";
 
 class Articles extends React.Component {
   constructor(props) {
@@ -46,9 +47,10 @@ class Articles extends React.Component {
 
   render() {
     return (
-      <div className="container addArticle">
-         <Header />
-         <h1>Add New Article</h1>
+      <>
+        <Header />
+      <div className="container addArticle">         
+         <h2>Add New Article</h2>
         <form>
           <div className="form-group">
             <label for="title">Title: </label>
@@ -65,6 +67,8 @@ class Articles extends React.Component {
           <button type="submit" className="btn btn-primary" onClick={this.addArticle}>Submit</button>
           </form>
         </div>
+        <Footer />
+        </>
     );
   }
 }
