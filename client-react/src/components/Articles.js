@@ -1,6 +1,6 @@
 <<<<<<< HEAD
 import React from "react";
-import axios from "axios";
+//import axios from "axios";
 import '../task.min.css'
 
 const Articles = props => {
