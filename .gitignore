@@ -103,10 +103,24 @@ dist
 # TernJS port file
 .tern-port
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 private/
 ||||||| merged common ancestors
 =======
+||||||| merged common ancestors
+<<<<<<<<< Temporary merge branch 1
+
+private/
+||||||||| merged common ancestors
+=========
+=======
+>>>>>>> c1e29c90b200f4e59ed03b2e260a98d62fd2bc80
 
 .private/
+<<<<<<< HEAD
 >>>>>>> origin
+||||||| merged common ancestors
+>>>>>>>>> Temporary merge branch 2
+=======
+>>>>>>> c1e29c90b200f4e59ed03b2e260a98d62fd2bc80
