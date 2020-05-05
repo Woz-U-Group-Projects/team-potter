@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import{ Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 // import { Button } from "react-bootstrap";
 import "../task.min.css";
 import Header from "./layouts/Header";
@@ -23,7 +23,7 @@ class Article extends React.Component {
   //   this.deleteData();
   // }
 
-
+  //test note
   getData = () => {
     // Java Spring Boot uses port 8080
     //let url = "http://localhost:8080/tasks";
@@ -44,9 +44,8 @@ class Article extends React.Component {
     axios
       .delete(`${url}/` + this.props.match.params.id)
       .then((response) => this.setState({ article: response.data }));
-    console.log(id)
-  }
-   
+    console.log(id);
+  };
 
   render() {
     const article = this.state.article;
@@ -59,7 +58,12 @@ class Article extends React.Component {
         <button type="button" className="btn btn-primary">
           Edit
         </button>
-        <Link onClick={this.deleteData}type="button" className="btn btn-danger" to='/'>
+        <Link
+          onClick={this.deleteData}
+          type="button"
+          className="btn btn-danger"
+          to="/"
+        >
           Delete
         </Link>
         <Footer />
