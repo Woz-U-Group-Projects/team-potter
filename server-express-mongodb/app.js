@@ -23,6 +23,10 @@ app.use("/articles", articlesRouter);
 
 mongoose.connect(mongoDB, { useNewUrlParser: true });
 mongoose.Promise = global.Promise;
+
+mongoose.connect(mongoDB, { useNewUrlParser: true });
+mongoose.Promise = global.Promise;
+
 var db = mongoose.connection;
 db.on("connected", () => console.log(`Mongoose connection open to ${mongoDB}`));
 db.on("disconnected", () => console.log("Mongoose connection disconnected"));
