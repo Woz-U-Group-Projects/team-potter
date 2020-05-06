@@ -25,12 +25,13 @@ router.delete("/:id", function(req, res, next) {
   });
 });
 
-router.put("/:id", function(req, res, next) {
+router.put("/edit-article/:id", function(req, res, next) {
   ArticleModel.findByIdAndUpdate(
     req.params.id,
     {
-      name: req.body.name,
-      complete: req.body.complete
+      title: req.body.title,
+      article: req.body.article,
+      authorname: req.body.authorname
     },
     { new: true },
     (err, article) => {

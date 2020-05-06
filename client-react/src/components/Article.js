@@ -1,7 +1,6 @@
 import React from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-// import { Button } from "react-bootstrap";
 import "../task.min.css";
 import Header from "./layouts/Header";
 import Footer from "./layouts/Footer";
@@ -55,12 +54,11 @@ class Article extends React.Component {
         <h1>{article.title}</h1>
         <p>{article.article}</p>
         <span className="badge badge-secondary p-2">{article.authorname}</span>
-        <button type="button" className="btn btn-primary">
+        <Link className="btn btn-primary" to={`/EditArticle/${article.id}`}>
           Edit
-        </button>
+        </Link>
         <Link
           onClick={this.deleteData}
-          type="button"
           className="btn btn-danger"
           to="/"
         >
