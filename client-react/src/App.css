@@ -29,6 +29,8 @@ body {
 
 .btn-success {
   background: #FF5E33;
+  margin-top: 5px;
+  margin-bottom: 15px;
 }
 
 .btn-success:hover {
@@ -37,4 +39,23 @@ body {
 
 .addArticle {
   padding-top: 10%;
+}
+
+.btn-third {
+  background-color: #f4511e;
+  border: black;
+  margin-left: 25px;
+}
+
+.badge-secondary {
+  font-size: 12px;
+  font-weight: bolder;
+  background-color: lightblue;
+}
+
+.lead {
+  white-space: nowrap; 
+  width: 75em; 
+  overflow: hidden;
+  text-overflow: inherit;
 }
