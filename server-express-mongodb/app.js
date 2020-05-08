@@ -22,9 +22,9 @@ app.use(cors());
 app.use("/articles", articlesRouter);
 
 
-var mongoDB = "mongodb://127.0.0.1/database";
-//var mongoDB =
-  "mongodb+srv://ammon:Password1%21@cluster0-lhvh5.mongodb.net/test?retryWrites=true&w=majority";
+// var mongoDB = "mongodb://127.0.0.1/database";
+// //var mongoDB =
+//   "mongodb+srv://ammon:Password1%21@cluster0-lhvh5.mongodb.net/test?retryWrites=true&w=majority";
 
 mongoose.connect(mongoDB, { useNewUrlParser: true });
 mongoose.Promise = global.Promise;

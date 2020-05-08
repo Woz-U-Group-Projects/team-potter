@@ -35,7 +35,7 @@ class Articles extends React.Component {
       <div>
         <Header />     
 
-        <div className="container articles">
+        <div className="container">
           {this.state.articles.map((p) => (
             <div key={p._id}>
               <Link to={`article/${p._id}`}>
