@@ -3,10 +3,13 @@ html {
 }
 
 body {
+  background: #202020;
+  color: white;
   font-family: 'Raleway', sans-serif;
 }
 
 #mainNavbar {
+  height: 70px;
   font-size: 1.5em;
   font-weight: 400
 }
@@ -16,11 +19,13 @@ body {
 }
 
 .jumbotron {
+  position: relative;
   background: url(./Images/austin-schmid-jumping-lady.jpg) center center / cover no-repeat;
   padding: 5em inherit;
   color: #FFF;
-  padding-top: 20%;
-  padding-bottom: 20%;
+  padding-top: 15%;
+  padding-bottom: 15%;
+  top: 70px;
 }
 
 .jumbotron h1 {
@@ -37,6 +42,9 @@ body {
   background: #333;
 }
 
+.article {
+  padding-top: 10%;
+}
 .addArticle {
   padding-top: 10%;
 }
@@ -55,7 +63,7 @@ body {
 
 .lead {
   white-space: nowrap; 
-  width: 75em; 
+  /* width: 75em;  */
   overflow: hidden;
-  text-overflow: inherit;
+  text-overflow: ellipsis;
 }

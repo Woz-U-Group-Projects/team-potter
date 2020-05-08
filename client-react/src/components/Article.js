@@ -3,7 +3,7 @@ import axios from "axios";
 // import{ Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import "../task.min.css";
-import Header from "./layouts/Header";
+import MinifiedHeader from "./layouts/MinifiedHeader";
 import Footer from "./layouts/Footer";
 
 class Article extends React.Component {
@@ -51,24 +51,25 @@ class Article extends React.Component {
     const article = this.state.article;
     return (
       <div>
-        <Header />
+        <MinifiedHeader />
+        <div className="container article">
+          <h1>{article.title}</h1>
 
-        <h1>{article.title}</h1>
+          <p>{article.article}</p>
 
-        <p>{article.article}</p>
+          <span className="badge badge-secondary p-2">{article.authorname}</span>
 
-        <span className="badge badge-secondary p-2">{article.authorname}</span>
+          <button type="button" className="btn btn-primary">
+            Edit
+          </button>
 
-        <button type="button" className="btn btn-primary">
-          Edit
-        </button>
-
-        <Button onClick={this.deleteData}type="button" className="btn btn-danger" href='/'>
-          Delete
-        </Button>
-        
-        
-          <div className="form-group"></div>
+          <Button onClick={this.deleteData}type="button" className="btn btn-danger" href='/'>
+            Delete
+          </Button>
+          
+          
+            <div className="form-group"></div>
+          </div>
         <Footer />
       </div>
 

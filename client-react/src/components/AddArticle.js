@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import '../task.min.css';
-import Header from "./layouts/Header";
+import MinifiedHeader from "./layouts/MinifiedHeader";
 import Footer from "./layouts/Footer";
 
 class Articles extends React.Component {
@@ -56,7 +56,7 @@ class Articles extends React.Component {
   render() {
     return (
       <>
-        <Header />
+        <MinifiedHeader />
       <div className="container addArticle">         
          <h2>Add New Article</h2>
         <form>

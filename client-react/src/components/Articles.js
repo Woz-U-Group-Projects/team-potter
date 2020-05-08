@@ -35,7 +35,7 @@ class Articles extends React.Component {
       <div>
         <Header />     
 
-        <div className="container">
+        <div className="container articles">
           {this.state.articles.map((p) => (
             <div key={p._id}>
               <Link to={`article/${p._id}`}>
@@ -43,7 +43,7 @@ class Articles extends React.Component {
               </Link>
               <p className="lead">{p.article}</p>
               {/* innclude date created <span className="badge badge-secondary p-2">{p.createdAt.toLocaleDateString()}</span>*/} 
-              <span className="badge badge-secondary p-2">{p.authorname}</span> <br />
+              <span className="badge badge-secondary">{p.authorname}</span> <br />
               <Link className="btn btn-success" to={`article/${p._id}`}>
                 Read more
               </Link>
