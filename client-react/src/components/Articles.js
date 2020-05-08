@@ -1,51 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-import React from "react";
-//import axios from "axios";
-import '../task.min.css'
-
-const Articles = props => {
-    return (
-        <div>
-            <Title name="Lifestyle Blog" />
-        </div>
-    )
-};
-
-const Title = props => (
-    <div>
-        <h1> {props.name} </h1>
-    </div>
-);
-
-export default Articles;
-||||||| merged common ancestors
-=======
-||||||| merged common ancestors
-<<<<<<<<< Temporary merge branch 1
-import React from "react";
-//import axios from "axios";
-import '../task.min.css'
-
-const Articles = props => {
-    return (
-        <div>
-            <Title name="Lifestyle Blog" />
-        </div>
-    )
-};
-
-const Title = props => (
-    <div>
-        <h1> {props.name} </h1>
-    </div>
-);
-
-export default Articles;
-||||||||| merged common ancestors
-=========
-=======
->>>>>>> c1e29c90b200f4e59ed03b2e260a98d62fd2bc80
 import React from "react";
 import axios from "axios";
 import "../task.min.css";
@@ -105,9 +57,4 @@ class Articles extends React.Component {
 }
 
 export default Articles;
-<<<<<<< HEAD
->>>>>>> 1ba287e5e30050a28f613c67fc8533e0b1da25c2
-||||||| merged common ancestors
->>>>>>>>> Temporary merge branch 2
-=======
->>>>>>> c1e29c90b200f4e59ed03b2e260a98d62fd2bc80
+
