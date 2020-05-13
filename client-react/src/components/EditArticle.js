@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import '../task.min.css';
-import Header from "./layouts/Header";
+import MinifiedHeader from "./layouts/MinifiedHeader";
 import Footer from "./layouts/Footer";
 
 class EditArticle extends React.Component {
@@ -68,7 +68,7 @@ class EditArticle extends React.Component {
     };
      
     axios
-      .put('http://localhost:3001/articles/edit-article'+this.props.match.params.id, articleObject)
+      .put('http://localhost:3001/articles/edit-article/'+this.props.match.params.id, articleObject)
         .then(response => {
             console.log(response.data)
             console.log('Article successfully updated')
@@ -91,9 +91,9 @@ class EditArticle extends React.Component {
   render() {
     return (
       <>
-        <Header />
+        <MinifiedHeader />
       <div className="container addArticle">         
-         <h2>Edit {this.state.title} Article</h2>
+         <h2>Edit Article</h2>
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
             <label htmlFor="title">Title: </label>

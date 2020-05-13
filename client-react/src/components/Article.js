@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-// import{ Link } from "react-router-dom";
+import{ Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import "../task.min.css";
 import MinifiedHeader from "./layouts/MinifiedHeader";
@@ -59,9 +59,9 @@ class Article extends React.Component {
 
           <span className="badge badge-secondary p-2">{article.authorname}</span>
 
-          <button type="button" className="btn btn-primary">
+          <Link className="btn btn-primary" to={`/EditArticle/${article._id}`}>
             Edit
-          </button>
+          </Link>
 
           <Button onClick={this.deleteData}type="button" className="btn btn-danger" href='/'>
             Delete
