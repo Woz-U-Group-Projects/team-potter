@@ -45,7 +45,7 @@ class Article extends React.Component {
       .then((response) => this.setState({ article: response.data }));
     console.log(id)
   }
-   
+
 
   render() {
     const article = this.state.article;
@@ -63,13 +63,22 @@ class Article extends React.Component {
             Edit
           </Link>
 
-          <Button onClick={this.deleteData}type="button" className="btn btn-danger" href='/'>
+          <Button onClick={this.deleteData} type="button" className="btn btn-danger" href='/'>
             Delete
           </Button>
-          
-          
-            <div className="form-group"></div>
+
+          <div className="form-group">
+            <label for="comment">Comment: </label>
+            <textarea type="text" className="form-control" id="comment" placeholder="Enter your comment here" />
           </div>
+
+          <button type="button" className="btn btn-third">
+            Post Comment
+        </button>
+
+
+          <div className="form-group"></div>
+        </div>
         <Footer />
       </div>
 
