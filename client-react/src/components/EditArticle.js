@@ -97,7 +97,7 @@ class EditArticle extends React.Component {
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
             <label htmlFor="title">Title: </label>
-            <input type="text" className="form-control" id="title" aria-describedby="titleField" value={this.state.title} onChange={this.onChangeArticleTitle}/>
+            <input type="text" className="form-control" id="title" aria-describedby="titleField" value={this.state.title || ""} onChange={this.onChangeArticleTitle}/>
           </div>
           <div className="form-group">
             <label htmlFor="article">Article: </label>
@@ -108,7 +108,7 @@ class EditArticle extends React.Component {
           </div>
           <div className="form-group">
             <label htmlFor="author">Author name:</label>
-            <input type="text" className="form-control" id="author" value={this.state.authorname}
+            <input type="text" className="form-control" id="author" value={this.state.authorname || ""}
                 onChange={this.onChangeArticleAuthorName}/>
           </div>
           <button type="submit" className="btn btn-primary">Submit</button>
