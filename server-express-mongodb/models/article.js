@@ -15,7 +15,8 @@ article: {
 authorname: {
     type: String,
     required: true
-}
+  },
+timestamp: {type: Date, default: Date.now}
 });
 
 // Duplicate the ID field.
