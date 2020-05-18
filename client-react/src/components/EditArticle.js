@@ -1,8 +1,9 @@
 import React from "react";
 import axios from "axios";
 import '../task.min.css';
-import Header from "./layouts/Header";
 import Footer from "./layouts/Footer";
+import MinifiedHeader from "./layouts/MinifiedHeader";
+// import { withRouter } from "react-router-dom";
 
 class EditArticle extends React.Component {
   constructor(props) {
@@ -38,7 +39,7 @@ class EditArticle extends React.Component {
 
       .get(`${url}/` + this.props.match.params.id)
         .then((response) => this.setState({
-            id: response.data.id,
+            // id: response.data.id,
             title: response.data.title,
             article: response.data.article,
             authorname: response.data.authorname
@@ -68,15 +69,15 @@ class EditArticle extends React.Component {
     };
      
     axios
-      .put('http://localhost:3001/articles/edit-article'+this.props.match.params.id, articleObject)
+      .put('http://localhost:3001/articles/edit-article/'+this.props.match.params.id, articleObject)
         .then(response => {
-            console.log(response.data)
+           
             console.log('Article successfully updated')
         }).catch((error) => {
-            console.log(error)
+            console.log(error);
         })
       // Redirect to Article List 
-    this.props.history.push('/')
+    this.props.history.push('/');
      
   };
 
@@ -91,13 +92,13 @@ class EditArticle extends React.Component {
   render() {
     return (
       <>
-        <Header />
+        <MinifiedHeader />
       <div className="container addArticle">         
-         <h2>Edit {this.state.title} Article</h2>
-        <form onSubmit={this.onSubmit}>
+         <h2>Edit Article</h2>
+        <form noValidate onSubmit={this.onSubmit}>
           <div className="form-group">
             <label htmlFor="title">Title: </label>
-            <input type="text" className="form-control" id="title" aria-describedby="titleField" value={this.state.title} onChange={this.onChangeArticleTitle}/>
+            <input type="text" className="form-control" id="title" aria-describedby="titleField" value={this.state.title || ""} onChange={this.onChangeArticleTitle}/>
           </div>
           <div className="form-group">
             <label htmlFor="article">Article: </label>
@@ -108,7 +109,7 @@ class EditArticle extends React.Component {
           </div>
           <div className="form-group">
             <label htmlFor="author">Author name:</label>
-            <input type="text" className="form-control" id="author" value={this.state.authorname}
+            <input type="text" className="form-control" id="author" value={this.state.authorname || ""}
                 onChange={this.onChangeArticleAuthorName}/>
           </div>
           <button type="submit" className="btn btn-primary">Submit</button>
