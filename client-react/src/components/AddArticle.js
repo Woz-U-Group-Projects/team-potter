@@ -66,7 +66,7 @@ class Articles extends React.Component {
           </div>
           <div className="form-group">
             <label htmlFor="article">Article: </label>
-              <textarea type="text" className="form-control" id="article" placeholder="Enter your article content here" rows="30" maxLength={this.state.max_chars}
+              <textarea type="text" className="form-control" id="article" placeholder="Enter your article content here" rows="20" maxLength={this.state.max_chars}
           required
           onChange={this.handleWordCount} ref={this.articleArticle} />
               <div className="float-right">{this.state.chars_left}</div>

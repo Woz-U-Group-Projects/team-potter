@@ -57,13 +57,13 @@ class Article extends React.Component {
 
           <p>{article.article}</p>
 
-          <span className="badge badge-secondary p-2">{article.authorname}</span>
+          <span className="badge badge-secondary font-italic p-2 mr-5">Author: {article.authorname}</span>
 
-          <Link className="btn btn-primary" to={`/EditArticle/${article._id}`}>
+          <Link className="btn btn-primary ml-2" to={`/EditArticle/${article._id}`}>
             Edit
           </Link>
 
-          <Button onClick={this.deleteData} type="button" className="btn btn-danger" href='/'>
+          <Button onClick={this.deleteData} type="button" className="btn btn-danger ml-2" href='/'>
             Delete
           </Button>
 
