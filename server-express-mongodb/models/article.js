@@ -16,7 +16,11 @@ authorname: {
     type: String,
     required: true
   },
-timestamp: {type: Date, default: Date.now}
+timestamp: {type: Date, default: Date.now},
+category: {
+  type: String,
+  required: true
+}
 });
 
 // Duplicate the ID field.
