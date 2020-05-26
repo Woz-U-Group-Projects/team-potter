@@ -36,6 +36,7 @@ body {
   background: #FF5E33;
   margin-top: 5px;
   margin-bottom: 15px;
+  border-style: hidden;
 }
 
 .btn-success:hover {
@@ -53,12 +54,14 @@ body {
   background-color: #f4511e;
   border: black;
   margin-left: 25px;
+  border-style: hidden;
 }
 
 .badge-secondary {
   font-size: 12px;
   font-weight: bolder;
   background-color: lightblue;
+  border-style: hidden;
 }
 
 .lead {
@@ -66,4 +69,13 @@ body {
   /* width: 75em;  */
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+#category {
+  margin-left: 5px;
+  background-color: #f76f46;
+  color: rgb(3, 3, 146);
+  font-weight: bold;
+  padding: 3px;
+  border-style: hidden;
 }
