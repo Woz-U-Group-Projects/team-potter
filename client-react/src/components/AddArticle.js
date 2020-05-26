@@ -11,7 +11,7 @@ class Articles extends React.Component {
     this.articleTitle = React.createRef();
     this.articleArticle = React.createRef();
     this.articleAuthorName = React.createRef();
-    this.state = {chars_left: null, max_chars: 500};
+    this.state = { chars_left: null, max_chars: 500 };
     this.articleCategory = React.createRef();
   }
 
@@ -53,51 +53,61 @@ class Articles extends React.Component {
     const charCount = event.target.value.length;
     const maxChar = this.state.max_chars;
     const charLength = maxChar - charCount;
-    this.setState({chars_left: charLength});
+    this.setState({ chars_left: charLength });
   }
 
   render() {
     return (
       <>
         <MinifiedHeader />
-      <div className="container addArticle">         
-         <h2>Add New Article</h2>
-        <form>
+        <div className="container addArticle">
+          <h2>Add New Article</h2>
+          <form>
 
-          <div className="form-group">
-            <label htmlFor="title">Title: </label>
-            <input type="text" className="form-control" id="title" aria-describedby="titleField" placeholder="Enter the title of your article here" ref={this.articleTitle}/>
-          </div>
+            <div className="form-group">
+              <label htmlFor="title">Title: </label>
+              <input type="text" className="form-control" id="title" aria-describedby="titleField" placeholder="Enter the title of your article here" ref={this.articleTitle} />
+            </div>
 
-          <div className="form-group">
-            <label htmlFor="article">Article: </label>
+            <div className="form-group">
+              <label htmlFor="article">Article: </label>
               <textarea type="text" className="form-control" id="article" placeholder="Enter your article content here" rows="10" maxLength={this.state.max_chars}
-          required
-          onChange={this.handleWordCount} ref={this.articleArticle} />
+                required
+                onChange={this.handleWordCount} ref={this.articleArticle} />
               <div className="float-right">{this.state.chars_left}</div>
-          </div>
+            </div>
 
-          <div className="form-group">
-            <label htmlFor="author">Author name:</label>
-            <input type="text" className="form-control" id="author" placeholder="Enter your name here" ref={this.articleAuthorName}/>
-          </div>
+            <div className="form-group">
+              <label htmlFor="author">Author name:</label>
+              <input type="text" className="form-control" id="author" placeholder="Enter your name here" ref={this.articleAuthorName} />
+            </div>
 
-          <label for="category">Category:</label>
-          <select name="category" id="category" ref={this.articleCategory}>
-            <option value="fit">Fitness</option>
-            <option value="music">Music</option>
-            <option value="sport">Sports</option>
-            <option value="misc">Misc</option>
-          </select>
+            <label for="category">Category:</label>
+            <select name="category" id="category" ref={this.articleCategory}>
+              <option value="Aquatics">Aquatics </option>
+              <option value="Covid">Covid-19 </option>
+              <option value="Entertainment">Entertainment </option>
+              <option value="Fitness">Fitness </option>
+              <option value="Memes">Memes </option>
+              <option value="Misc">Misc </option>
+              <option value="Music">Music </option>
+              <option value="Podcast">Podcast </option>
+              <option value="Amateur Sports">Sports (Amateure) </option>
+              <option value="Pro Sports">Sports (Professional) </option>
+              <option value="Stay-At-Home Parent">Stay-At-Home Parent </option>
+              <option value="Competitive Games">Video Games (Competitive) </option>
+              <option value="NonCompetitive Games">Video Games (Non-Competitive) </option>
+              <option value="Streaming Games">Video Games (Streaming) </option>
+            </select>
 
-          <br></br>
+            <br></br>
 
-          <button type="submit" className="btn btn-primary" onClick={this.addArticle}>Submit</button>
-          
+            <button type="submit" className="btn btn-primary" onClick={this.addArticle}>Submit</button>
+
           </form>
         </div>
         <Footer />
-        </>
+      </>
     );
   }
 }

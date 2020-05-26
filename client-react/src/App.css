@@ -84,6 +84,7 @@ label {
   font-size: larger;
   font-weight: bold;
   color: #f4511e;
+  position: relative;
 }
 
 .btn-primary{
