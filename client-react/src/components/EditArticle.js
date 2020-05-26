@@ -102,7 +102,7 @@ class EditArticle extends React.Component {
           </div>
           <div className="form-group">
             <label htmlFor="article">Article: </label>
-              <textarea type="text" className="form-control" id="article" placeholder="Enter your article content here" rows="20" maxLength={this.state.max_chars}
+              <textarea type="text" className="form-control" id="article" placeholder="Enter your article content here" rows="10" maxLength={this.state.max_chars}
           required value={this.state.article}
           onChange={this.onChangeArticleArticle}/>
               <div className="float-right">{this.state.chars_left || this.state.max_chars}</div>
