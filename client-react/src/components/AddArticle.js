@@ -82,6 +82,7 @@ class Articles extends React.Component {
             <option value="sport">Sports</option>
             <option value="misc">Misc</option>
           </select>
+          <br></br>
           <button type="submit" className="btn btn-primary" onClick={this.addArticle}>Submit</button>
           </form>
         </div>
