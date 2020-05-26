@@ -73,9 +73,20 @@ body {
 
 #category {
   margin-left: 5px;
-  background-color: #f76f46;
-  color: rgb(3, 3, 146);
+  color: #f76f46;
+  background-color: rgb(3, 3, 146);
   font-weight: bold;
   padding: 3px;
   border-style: hidden;
+}
+
+label {
+  font-size: larger;
+  font-weight: bold;
+  color: #f4511e;
+}
+
+.btn-primary{
+  border-style: hidden;
+  margin-top: 10px;
 }
