@@ -12,6 +12,7 @@ class Articles extends React.Component {
     this.articleArticle = React.createRef();
     this.articleAuthorName = React.createRef();
     this.state = {chars_left: null, max_chars: 500};
+    this.articleCategory = React.createRef();
   }
 
   componentDidMount() {
@@ -36,6 +37,7 @@ class Articles extends React.Component {
       title: this.articleTitle.current.value,
       article: this.articleArticle.current.value,
       authorname: this.articleAuthorName.current.value,
+      category: this.articleCategory.current.value
     }).then(response => {
       // refresh the data
       this.getData();
@@ -43,6 +45,7 @@ class Articles extends React.Component {
       this.articleTitle.current.value = "";
       this.articleArticle.current.value = "";
       this.articleAuthorName.current.value = "";
+      this.articleCategory.current.value = "";
     });
   };
 
@@ -60,10 +63,12 @@ class Articles extends React.Component {
       <div className="container addArticle">         
          <h2>Add New Article</h2>
         <form>
+
           <div className="form-group">
             <label htmlFor="title">Title: </label>
             <input type="text" className="form-control" id="title" aria-describedby="titleField" placeholder="Enter the title of your article here" ref={this.articleTitle}/>
           </div>
+
           <div className="form-group">
             <label htmlFor="article">Article: </label>
               <textarea type="text" className="form-control" id="article" placeholder="Enter your article content here" rows="20" maxLength={this.state.max_chars}
@@ -71,19 +76,24 @@ class Articles extends React.Component {
           onChange={this.handleWordCount} ref={this.articleArticle} />
               <div className="float-right">{this.state.chars_left}</div>
           </div>
+
           <div className="form-group">
             <label htmlFor="author">Author name:</label>
             <input type="text" className="form-control" id="author" placeholder="Enter your name here" ref={this.articleAuthorName}/>
           </div>
+
           <label for="category">Category:</label>
-          <select name="category" id="category">
+          <select name="category" id="category" ref={this.articleCategory}>
             <option value="fit">Fitness</option>
             <option value="music">Music</option>
             <option value="sport">Sports</option>
             <option value="misc">Misc</option>
           </select>
+
           <br></br>
+
           <button type="submit" className="btn btn-primary" onClick={this.addArticle}>Submit</button>
+          
           </form>
         </div>
         <Footer />
