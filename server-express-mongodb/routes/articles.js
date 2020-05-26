@@ -14,6 +14,7 @@ router.post("/", function(req, res, next) {
   newArticle.title = req.body.title;
   newArticle.article = req.body.article;
   newArticle.authorname = req.body.authorname;
+  newArticle.category = req.body.category;
   newArticle.complete = false;
   newArticle.save().then(article => res.json(article));
 });
@@ -31,7 +32,8 @@ router.put("/edit-article/:id", function(req, res, next) {
     {
       title: req.body.title,
       article: req.body.article,
-      authorname: req.body.authorname
+      authorname: req.body.authorname,
+      category: req.body.category
     },
     { new: true },
     (err, article) => {
