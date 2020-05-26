@@ -75,6 +75,13 @@ class Articles extends React.Component {
             <label htmlFor="author">Author name:</label>
             <input type="text" className="form-control" id="author" placeholder="Enter your name here" ref={this.articleAuthorName}/>
           </div>
+          <label for="category">Category:</label>
+          <select name="category" id="category">
+            <option value="fit">Fitness</option>
+            <option value="music">Music</option>
+            <option value="sport">Sports</option>
+            <option value="misc">Misc</option>
+          </select>
           <button type="submit" className="btn btn-primary" onClick={this.addArticle}>Submit</button>
           </form>
         </div>
