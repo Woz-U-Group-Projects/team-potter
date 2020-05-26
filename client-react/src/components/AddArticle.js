@@ -84,6 +84,7 @@ class Articles extends React.Component {
 
             <label for="category">Category:</label>
             <select name="category" id="category" ref={this.articleCategory}>
+              <option value="hidden">  </option>
               <option value="Aquatics">Aquatics </option>
               <option value="Covid">Covid-19 </option>
               <option value="Entertainment">Entertainment </option>
