@@ -3,12 +3,13 @@ var router = express.Router();
 var ArticleModel = require("../models/article");
 
 router.get("/", function(req, res, next) {
-  ArticleModel.find().sort({ timestamp: -1 }).then(articles => res.json(articles));
+  ArticleModel.find().sort({ 'createdAt': -1 }).then(articles => res.json(articles));
 });
 
 router.get("/:id", function (req, res, next) {
   ArticleModel.findById(req.params.id).then(article => res.json(article));
 })
+
 router.post("/", function(req, res, next) {
   let newArticle = new ArticleModel();
   newArticle.title = req.body.title;

@@ -6,6 +6,7 @@ var cors = require("cors");
 var mongoose = require("mongoose");
 
 var articlesRouter = require("./routes/articles");
+var commentsRouter = require("./routes/comments");
 
 var app = express();
 
@@ -20,6 +21,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(cors());
 
 app.use("/articles", articlesRouter);
+app.use("/comments", commentsRouter);
 
 
 // var mongoDB = "mongodb://127.0.0.1/database";
