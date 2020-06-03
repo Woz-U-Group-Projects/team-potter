@@ -11,12 +11,14 @@ class EditArticle extends React.Component {
         this.onChangeArticleTitle = this.onChangeArticleTitle.bind(this);
         this.onChangeArticleArticle = this.onChangeArticleArticle.bind(this);
         this.onChangeArticleAuthorName = this.onChangeArticleAuthorName.bind(this);
+        this.onChangeArticleCategory = this.onChangeArticleCategory.bind(this);
       this.onSubmit = this.onSubmit.bind(this);
       
       this.state = {
           title: '',
           article: '',
-          authorname: ''
+          authorname: '',
+          category: ''
       };
     this.state = {chars_left: null, max_chars: 500};
   }
@@ -42,7 +44,8 @@ class EditArticle extends React.Component {
             // id: response.data.id,
             title: response.data.title,
             article: response.data.article,
-            authorname: response.data.authorname
+            authorname: response.data.authorname,
+            category: response.data.category
         }));
   };
             
@@ -59,13 +62,18 @@ class EditArticle extends React.Component {
     this.setState({ authorname: e.target.value })
   }
 
+  onChangeArticleCategory(e) {
+    this.setState({ category: e.target.value })
+  }
+
   onSubmit(e) {
       e.preventDefault()
 
     const articleObject = {
       title: this.state.title,
       article: this.state.article,
-      authorname: this.state.authorname
+      authorname: this.state.authorname,
+      category: this.state.category
     };
      
     axios
@@ -102,7 +110,7 @@ class EditArticle extends React.Component {
           </div>
           <div className="form-group">
             <label htmlFor="article">Article: </label>
-              <textarea type="text" className="form-control" id="article" placeholder="Enter your article content here" rows="20" maxLength={this.state.max_chars}
+              <textarea type="text" className="form-control" id="article" placeholder="Enter your article content here" rows="10" maxLength={this.state.max_chars}
           required value={this.state.article}
           onChange={this.onChangeArticleArticle}/>
               <div className="float-right">{this.state.chars_left || this.state.max_chars}</div>
@@ -112,6 +120,25 @@ class EditArticle extends React.Component {
             <input type="text" className="form-control" id="author" value={this.state.authorname || ""}
                 onChange={this.onChangeArticleAuthorName}/>
           </div>
+
+          <label for="category">Category:</label>
+            <select name="category" id="category" value={this.state.category} onChange={this.onChangeArticleCategory}>
+              <option value="Aquatics">Aquatics </option>
+              <option value="Covid">Covid-19 </option>
+              <option value="Entertainment">Entertainment </option>
+              <option value="Fitness">Fitness </option>
+              <option value="Memes">Memes </option>
+              <option value="Misc">Misc </option>
+              <option value="Music">Music </option>
+              <option value="Podcast">Podcast </option>
+              <option value="Amateur Sports">Sports (Amateure) </option>
+              <option value="Pro Sports">Sports (Professional) </option>
+              <option value="Stay-At-Home Parent">Stay-At-Home Parent </option>
+              <option value="Competitive Games">Video Games (Competitive) </option>
+              <option value="NonCompetitive Games">Video Games (Non-Competitive) </option>
+              <option value="Streaming Games">Video Games (Streaming) </option>
+            </select>
+            <br />
           <button type="submit" className="btn btn-primary">Submit</button>
           </form>
         </div>
