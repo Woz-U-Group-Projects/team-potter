@@ -67,3 +67,7 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.creators {
+  padding-top: 10%;
+}

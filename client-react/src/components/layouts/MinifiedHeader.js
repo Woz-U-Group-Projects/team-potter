@@ -12,6 +12,9 @@ const MinifiedHeader = ({ title }) => (
           <li className="nav-item">
             <Link to="/AddArticle" className="nav-link">Add Article</Link>
           </li>
+          <li className="nav-item">
+            <Link to="/Creators" className="nav-link">Site Creators</Link>
+          </li>
         </ul>
       </div>
     </nav>
