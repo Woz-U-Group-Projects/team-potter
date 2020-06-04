@@ -303,4 +303,20 @@ App Styles
 
 .logan {
   padding-top: 10%;
+  width: 750px;
+}
+
+#Logan {
+  width: 205px;
+  height: 150px;
+}
+
+.profile {
+  padding-top: 10%;
+}
+
+.profileImg {
+  width: 150px;
+  height: 150px;
+  image-rendering: auto;
 }
