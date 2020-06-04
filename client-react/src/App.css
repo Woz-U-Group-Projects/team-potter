@@ -1,5 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
+  font: normal 16px sans-serif
 }
 
 body {
@@ -7,6 +14,223 @@ body {
   color: white;
   font-family: 'Raleway', sans-serif;
 }
+
+/********************
+Landing Nav Styles
+********************/
+ul {
+  list-style: none;
+}
+nav {
+  list-style: none;
+  color: #FFF;
+}
+
+.landinglink {
+  text-decoration: none;
+  opacity: 0.75;
+  color: #FFF;
+}
+
+.landinglink:hover {
+  opacity: 1;
+}
+
+/********************
+Landing Header Styles
+********************/
+
+header {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 35px 100px 0;
+  opacity: 0;
+  animation: 1s fadein 0.5s forwards;
+  color: #FFF;
+}
+
+.headerlink {
+  color: #FFF;
+}
+
+header nav {
+  display: flex;
+  margin-right: -15px
+}
+
+header nav li {
+  margin: 0 15px;
+  font-size: 20px;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 80px;
+}
+
+.bttn {
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  background-color: #008cba;
+  color: #FFF;
+  opacity: 1;
+}
+
+.background-image {
+  background-image: url(./Images/austin-schmid-jumping-lady.jpg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  z-index: -1;
+  background-color: #80a3db;
+}
+
+@keyframes fadein {
+  100% {
+    opacity: 1;
+  }
+}
+
+/********************
+Landing Hero Styles
+********************/
+
+.hero {
+  position: relative;
+  justify-content: center;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.hero h1 {
+  font-weight: 600;
+  font-size: 70px;
+  margin-bottom: 15px;
+}
+
+.hero h3 {
+  /* font: normal 28px "Open Sans", sans-serif; */
+  font-weight: 400;
+  font-size: 30px;
+  margin-bottom: 40px;
+}
+
+.hero .bttn {
+  padding: 20px 46px;
+}
+
+.hero-content-space {
+  opacity: 0;
+  margin-top: 100px;
+  animation: 1s slidefade 1s forwards;
+}
+
+@keyframes slidefade {
+  100% {
+    opacity: 1;
+    margin: 0;
+  }
+}
+
+/********************
+Malik Creator Styles
+********************/
+
+.white-background {
+  color: black;
+  height: 160vh;
+  background-color: white;
+}
+
+.white-background .headerlink {
+  color: black;
+}
+
+.white-background .landinglink {
+  color: black;
+}
+
+.grid {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: center; */
+}
+hr {
+  width: 450px;
+  height: 3px;
+  background-color: #FF5E33;
+  border-top: 1px solid #FF5E33;
+}
+
+.about-malik {
+  opacity: 0;
+  margin-top: 1000px;
+  animation: 1s slidefade 1s forwards;
+}
+section p {
+  max-width: 775px;
+  line-height: 2;
+  padding: 0 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+#skills {
+ background-color: #FF5E33; 
+}
+
+#skills i {
+  display: block;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin: 0 auto;
+}
+
+#skills h3 {
+  text-align: center;
+}
+
+#skills h2 {
+  position: relative;
+  padding-top: 75px;
+  margin-top: -100px;
+  margin-bottom: 30px;
+}
+
+#hobbies {
+  background-image: url("./Images/parvez-azarqaderi-keyboard.jpg");
+  background-size: cover;
+  object-fit: cover;
+  object-position: 50% 20%;
+  height: 50vh;
+  width: 100%;
+}
+
+#hobbies h3 {
+  text-align: center;
+}
+
+#hobbies h2 {
+  position: relative;
+  padding-top: 75px;
+  margin-top: -100px;
+  margin-bottom: 30px;
+}
+/********************
+App Styles
+********************/
 
 #mainNavbar {
   height: 70px;
@@ -30,6 +254,11 @@ body {
 
 .jumbotron h1 {
   font-weight: 500;
+}
+
+#Malik {
+  width: 400px;
+  height: 600px;
 }
 
 .btn-success {

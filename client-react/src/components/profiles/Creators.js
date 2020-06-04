@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import MinifiedHeader from "../layouts/MinifiedHeader";
 import Footer from "../layouts/Footer";
+import Malik from "../../Images/Malik-headshot.jpg";
 
 class Creators extends React.Component {
     
@@ -19,6 +20,7 @@ class Creators extends React.Component {
                     <br />
 
                     <h1>Malik</h1>
+                    <img id="Malik" src={ Malik } alt="Malik" />;
                     <p>Testing this out</p>
                     <Link className="btn btn-primary" to={'/Malik/'}> 
                     See More About Malik!
