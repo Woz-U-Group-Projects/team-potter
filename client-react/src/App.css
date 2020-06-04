@@ -76,7 +76,16 @@ body {
   padding-top: 10%;
 }
 
-#Logan {
+#logan  {
+  width: 150px;
+  height: 150px;
+}
+
+.profile {
+  padding-top: 10%;
+}
+
+.profileImg {
   width: 150px;
   height: 150px;
 }

@@ -103,7 +103,7 @@ class Articles extends React.Component {
 
             <br></br>
 
-            <button type="submit" className="btn btn-primary" onClick={this.addArticle}>Submit</button>
+            <button type="submit" className="btn btn-primary" onClick={this.addArticle} >Submit</button>
 
           </form>
         </div>
