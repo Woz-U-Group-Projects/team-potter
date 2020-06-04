@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import MinifiedHeader from "../layouts/MinifiedHeader";
 import Footer from "../layouts/Footer";
 import Logan from "../../Images/Logan_2.jpg";
+import Dickson from "../../Images/Dickson.png";
 
 class Creators extends React.Component {
 
@@ -13,7 +14,7 @@ class Creators extends React.Component {
 
                 <div className="container creators">
                     <h1>Dickson</h1>
-                    <p>Testing this out</p>
+                    <img className='profileImg' src={Dickson} alt="Dickson" /><br />
                     <Link className="btn btn-primary" to={'/Dickson/'}>
                         See More About Dickson!
                     </Link>
