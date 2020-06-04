@@ -4,6 +4,8 @@ import{ Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import "../task.min.css";
 import MinifiedHeader from "./layouts/MinifiedHeader";
+import AddComment from "./AddComment";
+import Comments from "./Comments";
 import Footer from "./layouts/Footer";
 
 class Article extends React.Component {
@@ -54,7 +56,7 @@ class Article extends React.Component {
       <div>
         <MinifiedHeader />
         <div className="container article">
-          <h1>{article.title}</h1>
+          <h1>{article.title}</h1>          
 
           <p>{article.article}</p>
 
@@ -77,6 +79,9 @@ class Article extends React.Component {
 
           <div className="form-group"></div>
         </div>
+        <Comments id={this.props.match.params.id}/>
+        <AddComment id={this.props.match.params.id}/>
+         
         <Footer />
       </div>
 

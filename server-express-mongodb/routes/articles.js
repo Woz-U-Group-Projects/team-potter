@@ -1,14 +1,16 @@
 var express = require("express");
 var router = express.Router();
 var ArticleModel = require("../models/article");
+var CommentModel = require("../models/comment");
 
 router.get("/", function(req, res, next) {
-  ArticleModel.find().sort({ timestamp: -1 }).then(articles => res.json(articles));
+  ArticleModel.find().sort({ 'createdAt': -1 }).then(articles => res.json(articles));
 });
 
 router.get("/:id", function (req, res, next) {
   ArticleModel.findById(req.params.id).then(article => res.json(article));
 })
+
 router.post("/", function(req, res, next) {
   let newArticle = new ArticleModel();
   newArticle.title = req.body.title;
@@ -42,5 +44,10 @@ router.put("/edit-article/:id", function(req, res, next) {
     }
   );
 });
+
+router.get("/:id/comments", function(req, res, next) {
+  CommentModel.find({article: req.params.id}).sort({ 'createdAt': -1 }).then(comments => res.json(comments));
+});
+
 
 module.exports = router;

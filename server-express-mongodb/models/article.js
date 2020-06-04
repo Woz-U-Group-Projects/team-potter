@@ -19,14 +19,19 @@ authorname: {
     required: true
   },
 
-timestamp: {
-  type: Date, 
-  default: Date.now},
 
 category: {
   type: String,
   required: true
-}
+},
+
+  comments: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Comment'
+}]
+}, {
+  timestamps : true,
+
 });
 
 // Duplicate the ID field.

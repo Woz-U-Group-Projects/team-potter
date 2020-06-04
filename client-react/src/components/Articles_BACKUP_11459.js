@@ -43,12 +43,12 @@ class Articles extends React.Component {
               </Link>
               <p className="lead">{p.article}</p>
               {/* innclude date created <span className="badge badge-secondary p-2">{p.createdAt.toLocaleDateString()}</span>*/} 
-
+<<<<<<< HEAD
               <span className="badge badge-secondary font-italic">Author: {p.authorname}</span> <br />
               <span className="badge badge-secondary font-italic">Category: {p.category}</span> <br />
-
+=======
               <span className="badge badge-secondary font-italic">Posted by {p.authorname} on {p.createdAt} </span> <br />
-
+>>>>>>> dev_comment
               <Link className="btn btn-success" to={`article/${p._id}`}>
                 Read more >>>
               </Link>
