@@ -55,8 +55,7 @@ class Article extends React.Component {
       <div>
         <MinifiedHeader />
         <div className="container article">
-          <h1>{article.title}</h1>
-          <span>Posted on: {article.createdAt}</span>
+          <h1>{article.title}</h1>          
 
           <p>{article.article}</p>
 

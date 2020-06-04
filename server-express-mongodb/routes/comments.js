@@ -24,7 +24,7 @@ router.post("/:articleId", function (req, res, next) {
         .save()
         .then((createdComment) => {
           // add new comment ID to article document
-          console.log(article);
+          // console.log(article);
           article.comments.push(createdComment._id);
           return article
             .save()
