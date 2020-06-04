@@ -37,9 +37,9 @@ class AddComment extends React.Component {
     axios.post(`${url}/` + this.props.id, {
       content: this.commentContent.current.value
     }).then(response => {
-      console.log(response)
-      // refresh the data
-      //this.getData();
+      // console.log(response)
+      // // refresh the data
+      this.getData();
       // empty the input
       //this.commentContent.current.value = "";
     });
@@ -54,13 +54,16 @@ class AddComment extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault();
+    let url = `http://localhost:3001/articles/${this.props.id}/comments`;
+    axios.get(url).then(response => this.setState({comments: response.data }));
+    
   };
    
   render() {
     return (
       <div className="container">
       <h3>Add a Comment</h3>
-      <form onSubmit={this.handleSubmit}>
+      <form>
           <div className="form-group">
             <textarea rows="3"
                 className="form-control"

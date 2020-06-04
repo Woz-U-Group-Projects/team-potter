@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-
+var date = new Date();
 var CommentSchema = new Schema({
 
   article: {
@@ -9,6 +9,7 @@ var CommentSchema = new Schema({
     content: { type: String, required: true, trim: true },
     thumbsup: { type: Number, default: 0},
     thumbsdown: { type: Number, default: 0},
+    date: { type: String, default: date}
         
 },{
     timestamps : true,

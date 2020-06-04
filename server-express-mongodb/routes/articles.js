@@ -43,4 +43,9 @@ router.put("/edit-article/:id", function(req, res, next) {
   );
 });
 
+router.get("/:id/comments", function(req, res, next) {
+  CommentModel.find({article: req.params.id}).sort({ 'createdAt': -1 }).then(comments => res.json(comments));
+});
+
+
 module.exports = router;

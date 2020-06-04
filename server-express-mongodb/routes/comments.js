@@ -5,6 +5,11 @@ var ArticleModel = require("../models/article");
 
 router.get("/:articleId", function (req, res, next) {
   ArticleModel.findById(req.params.articleId)    
+    .then((article) => {console.log(article); res.json(article)});
+});
+
+router.get("/:articleId", function (req, res, next) {
+  ArticleModel.findById(req.params.articleId)    
     .then((article) => res.json(article));
 });
 router.post("/:articleId", function (req, res, next) {
@@ -29,6 +34,13 @@ router.post("/:articleId", function (req, res, next) {
         .catch((err) => next(err))
     )
     .catch((err) => next(err));
+});
+
+router.delete("/:id", function(req, res, next) {
+  CommentModel.findByIdAndRemove(req.params.id, (err, article) => {
+    if (err) return res.status(400).send(err);
+    res.send("comment deleted");
+  });
 });
 
 module.exports = router;

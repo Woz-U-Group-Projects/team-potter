@@ -10,7 +10,7 @@ class Comments extends React.Component {
   }
 
   componentDidMount(){
-    axios.get('http://localhost:3001/comments')
+    axios.get(`http://localhost:3001/articles/${this.props.id}/comments`)
       .then(response => this.setState({ comments : response.data }))
       .catch(err => console.log(err));
   }
@@ -22,10 +22,10 @@ class Comments extends React.Component {
         <div className="container">
             <h3>Comments</h3>
               {this.state.comments.map((c) => (
-                  <div key={c._id}>
+                  <ul key={c._id} style={{ listStyle: "none"}}>
       
-        <p>{ c.content }</p>
-        </div>
+        <li>{ c.content } <span style={{fontSize: .75 + "em", color: "grey"}}> - {c.date}</span></li>
+        </ul>
               ))}
             
         </div>
