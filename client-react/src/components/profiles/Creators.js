@@ -15,21 +15,22 @@ class Creators extends React.Component {
                 <div className="container creators">
                     <h1>Dickson</h1>
                     <img className='profileImg' src={Dickson} alt="Dickson" /><br />
+                    <br />
                     <Link className="btn btn-primary" to={'/Dickson/'}>
                         See More About Dickson!
                     </Link>
                     <br />
-
+                    <br />
                     <h1>Malik</h1>
                     <p>Testing this out</p>
                     <Link className="btn btn-primary" to={'/Malik/'}>
                         See More About Malik!
                     </Link>
                     <br />
-
+                    <br />
                     <h1>Logan</h1>
                     <img id='Logan' src={Logan} alt="Logan" /><br />
-                    <Link className="btn btn-primary" to={'/Logan/'}>
+                    <br /><Link className="btn btn-primary" to={'/Logan/'}>
                             See More About Logan!
                     </Link>
                         <br />
