@@ -74,9 +74,11 @@ body {
 
 .logan {
   padding-top: 10%;
+  width: 750px;
 }
 
 #Logan {
-  width: 150px;
+  width: 205px;
   height: 150px;
+  image-rendering: auto;
 }

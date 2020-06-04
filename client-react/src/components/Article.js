@@ -58,9 +58,16 @@ class Article extends React.Component {
 
           <p>{article.article}</p>
 
-          <span className="badge badge-secondary font-italic p-2 mr-5">Author: {article.authorname}</span> <br />
-          <span className="badge badge-secondary font-italic p-2 mr-5">Category: {article.category}</span> <br/>
-          <Link className="btn btn-primary ml-2" to={`/EditArticle/${article._id}`}>
+          <span className="badge badge-secondary font-italic">
+            Author: {article.authorname}
+            </span> <br />
+
+          <span className="badge badge-secondary font-italic">
+            Category: {article.category}
+            </span> <br />
+
+          <br />
+          <Link className="btn btn-primary" to={`/EditArticle/${article._id}`}>
             Edit
           </Link>
 
