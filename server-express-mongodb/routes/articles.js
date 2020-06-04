@@ -1,6 +1,7 @@
 var express = require("express");
 var router = express.Router();
 var ArticleModel = require("../models/article");
+var CommentModel = require("../models/comment");
 
 router.get("/", function(req, res, next) {
   ArticleModel.find().sort({ 'createdAt': -1 }).then(articles => res.json(articles));

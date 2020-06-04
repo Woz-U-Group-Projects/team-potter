@@ -3,7 +3,9 @@ var Schema = mongoose.Schema;
 
 var CommentSchema = new Schema({
 
-    article: { type: Schema.Types.ObjectId, ref: 'Article' },
+  article: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Article'},
     content: { type: String, required: true, trim: true },
     thumbsup: { type: Number, default: 0},
     thumbsdown: { type: Number, default: 0},
@@ -11,5 +13,11 @@ var CommentSchema = new Schema({
 },{
     timestamps : true,
 });
+
+// Duplicate the ID field.
+CommentSchema.virtual("id").get(function () { return this._id.toHexString(); });
+
+// Ensure virtual fields are serialised.
+CommentSchema.set("toJSON", { virtuals: true });
 
 module.exports =  mongoose.model('Comment', CommentSchema);

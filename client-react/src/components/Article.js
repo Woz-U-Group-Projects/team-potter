@@ -5,7 +5,7 @@ import { Button } from "react-bootstrap";
 import "../task.min.css";
 import MinifiedHeader from "./layouts/MinifiedHeader";
 import AddComment from "./AddComment";
-import Comments from "./Comments";
+// import Comments from "./Comments";
 import Footer from "./layouts/Footer";
 
 class Article extends React.Component {
@@ -56,6 +56,7 @@ class Article extends React.Component {
         <MinifiedHeader />
         <div className="container article">
           <h1>{article.title}</h1>
+          <span>Posted on: {article.createdAt}</span>
 
           <p>{article.article}</p>
 
@@ -73,7 +74,7 @@ class Article extends React.Component {
         </div>
 
         <AddComment />
-        <Comments />
+        {/* <Comments /> */}
         <Footer />
       </div>
 

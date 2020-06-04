@@ -1,45 +1,34 @@
 var express = require("express");
-var router = express.Router();
+var router = express.Router({ mergeParams: true }); // this is helpful when working with nested routes
 var CommentModel = require("../models/comment");
 var ArticleModel = require("../models/article");
 
-router.get("/:id", function (req, res, next) {
-    ArticleModel.findById(req.params.id).then(article => res.json(article));
-  })
-
-router.get('/' , (req,res) => {
-    CommentModel.find({})
-        .populate('article')
-        .sort({'createdAt':-1})
-        .then(comments => res.json(comments))
-        .catch(err => res.status(400).json('Error' + err));
-  });
-
-router.post('/', async (req, res) => {
-    const comment = new CommentModel({
-       
-        article: req.params.id,        
-        content : req.body.content
-
-    }); console.log(req.params.id)
-    try {
-        const savedComment = await comment.save();
-        const savedCommentWithArticleData = await CommentModel.findById(savedComment._id).populate('article');
-        res.send(savedCommentWithArticleData); 
-    }catch(err){
-        res.status(400).send(err);
-    }
-})
-
-router.put('/update/', async (req,res) => {
-    
-    console.log(req.article);
-    try {
-        await CommentModel.findByIdAndUpdate(req.body._id, { thumbsup : req.body.thumbsup, thumbsdown: req.body.thumbsdown });
-        res.send({ "success": true });
-    }catch(err){
-        res.status(400).send(err);
-    }
-})
+router.get("/:articleId", function (req, res, next) {
+  ArticleModel.findById(req.params.articleId)    
+    .then((article) => res.json(article));
+});
+router.post("/:articleId", function (req, res, next) {
+  // create new comment document
+  const newComment = new CommentModel(req.body);
+  newComment.article = req.params.articleId;
+  // find article document
+  return ArticleModel.findById(req.params.articleId)
+    .then((article) =>
+      // save new comment document
+      newComment
+        .save()
+        .then((createdComment) => {
+          // add new comment ID to article document
+          console.log(article);
+          article.comments.push(createdComment._id);
+          return article
+            .save()
+            .then(() => res.redirect(`/articles/${article.id}/comments`))
+            .catch((err) => next(err));
+        })
+        .catch((err) => next(err))
+    )
+    .catch((err) => next(err));
+});
 
 module.exports = router;
