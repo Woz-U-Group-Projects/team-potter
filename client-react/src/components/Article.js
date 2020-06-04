@@ -71,7 +71,7 @@ class Article extends React.Component {
             Edit
           </Link>
 
-          <Button onClick={this.deleteData} type="button" className="btn btn-danger ml-2" href='/'>
+          <Button onClick={this.deleteData} type="button" className="btn btn-danger ml-2" href='/Articles'>
             Delete
           </Button>
 

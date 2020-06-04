@@ -19,7 +19,7 @@ class Malik extends React.Component {
             <section>
                 <div className="about-malik">
                 <h3>A Little Bit About Me</h3>
-                <p>See, here's the thing... I'm not your average tech guy. I didn't grow up wanting to do anything with technology outside of using it. I didn't want to build things, design websites, create logos, support enterprise technologhy infrastructure, or choose technology as a career profession. Now, I do all of those things. By day, I help a New York PR firm keep their technology infrastructure going without a hitch. By night, I design and develop websites for small businesses and organizations. While I do know some back-end technologies, I focus on the front-end to leave your webpages beautiful, clean, and enticing</p>
+                <p>Born in Brooklyn, NY and currently residing in Norwalk, CT, I'm a husband as well as a father of a 3 year old girl. I've been in IT for almost 8 years in the IT Service Management/Infrastructre space. See, here's the thing... I'm not your average tech guy. I didn't grow up wanting to do anything with technology outside of using it. I didn't want to build things, design websites, create logos, support enterprise technologhy infrastructure, or choose technology as a career profession. Now, I do all of those things. By day, I help a New York PR firm keep their technology infrastructure going without a hitch. By night, I design and develop websites for small businesses and organizations. While I do know some back-end technologies, I focus on the front-end to leave your webpages beautiful, clean, and enticing</p>
                 </div>
                 <hr></hr>
             </section>

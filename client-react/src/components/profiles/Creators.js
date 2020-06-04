@@ -6,6 +6,7 @@ import Malik from "../../Images/Malik-headshot.jpg";
 import Logan from "../../Images/Logan_2.jpg";
 import Dickson from "../../Images/Dickson.png";
 
+
 class Creators extends React.Component {
 
     render() {
@@ -23,8 +24,8 @@ class Creators extends React.Component {
                     <br />
                     <br />
                     <h1>Malik</h1>
-                    <img id="Malik" src={ Malik } alt="Malik" />;
-                    <p>Testing this out</p>
+                    <img className='profileImg' id="Malik" src={ Malik } alt="Malik" /><br />
+                    <br/>
                     <Link className="btn btn-primary" to={'/Malik/'}>
                         See More About Malik!
                     </Link>
