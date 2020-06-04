@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import{ Link } from "react-router-dom";
 
 class AddComment extends React.Component {
 
@@ -12,7 +13,7 @@ class AddComment extends React.Component {
     this.commentContent = React.createRef();
     this.state = {chars_left: null, max_chars: 40};
   }
-
+  
   componentDidMount() {
     this.getData();
   }
@@ -27,17 +28,20 @@ class AddComment extends React.Component {
     // Express uses port 3001 (react uses 3000)
     let url = "http://localhost:3001/articles";
     axios.get(url).then(response => this.setState({ articles: response.data }));
+    
   };
 
   addComment = () => {
+    console.log(this.props)
     let url = "http://localhost:3001/comments";
-    axios.post(`${url}/` + this.props.match.params.id, {
+    axios.post(`${url}/` + this.props.id, {
       content: this.commentContent.current.value
     }).then(response => {
+      console.log(response)
       // refresh the data
-      this.getData();
+      //this.getData();
       // empty the input
-      this.commentContent.current.value = "";
+      //this.commentContent.current.value = "";
     });
   };
 
@@ -46,14 +50,17 @@ class AddComment extends React.Component {
     const maxChar = this.state.max_chars;
     const charLength = maxChar - charCount;
     this.setState({chars_left: charLength});
-  }
+  };
 
+  handleSubmit = event => {
+    event.preventDefault();
+  };
    
   render() {
     return (
       <div className="container">
       <h3>Add a Comment</h3>
-      <form>
+      <form onSubmit={this.handleSubmit}>
           <div className="form-group">
             <textarea rows="3"
                 className="form-control"
@@ -64,7 +71,7 @@ class AddComment extends React.Component {
               <div className="float-right">{this.state.chars_left}</div>
           </div>
           <div className="form-group" align="right">            
-            <button type="submit" className="btn btn-success" onClick={this.addComment}>Post Comment</button>
+            <button className="btn btn-success" onClick={this.addComment}>Post Comment</button>
           </div>
       </form>
       </div>

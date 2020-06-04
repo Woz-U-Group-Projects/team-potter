@@ -23,7 +23,7 @@ router.post("/:articleId", function (req, res, next) {
           article.comments.push(createdComment._id);
           return article
             .save()
-            .then(() => res.redirect(`/articles/${article.id}/comments`))
+            .then(() => console.log("comment uploaded"))
             .catch((err) => next(err));
         })
         .catch((err) => next(err))

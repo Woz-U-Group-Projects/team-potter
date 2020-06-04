@@ -5,7 +5,7 @@ import { Button } from "react-bootstrap";
 import "../task.min.css";
 import MinifiedHeader from "./layouts/MinifiedHeader";
 import AddComment from "./AddComment";
-// import Comments from "./Comments";
+import Comments from "./Comments";
 import Footer from "./layouts/Footer";
 
 class Article extends React.Component {
@@ -72,9 +72,9 @@ class Article extends React.Component {
 
           <div className="form-group"></div>
         </div>
-
-        <AddComment />
-        {/* <Comments /> */}
+        <Comments id={this.props.match.params.id}/>
+        <AddComment id={this.props.match.params.id}/>
+         
         <Footer />
       </div>
 
